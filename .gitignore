@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+exports/
+log/
+demo-log.txt
+example.md

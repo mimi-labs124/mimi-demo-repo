@@ -10,6 +10,7 @@
 - 顯示金句庫統計
 - 匯出全部金句到文字檔
 - 基本自動化測試（`test_main.py`）
+- 透過 `.gitignore` 排除測試輸出與暫存檔，保持 repo 乾淨
 
 ## 快速開始
 
@@ -20,7 +21,7 @@ python3 main.py add "保持紀律，別跟爛單談戀愛。"
 python3 main.py list
 python3 main.py search 市場
 python3 main.py stats
-python3 main.py export exports/quotes.txt
+python3 main.py export tmp/quotes.txt
 ```
 
 ## 測試
