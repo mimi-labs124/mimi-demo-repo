@@ -1,8 +1,8 @@
 # main.py - Mimi 風格金句隨機顯示器
-# 這個程式執行時會隨機顯示一則米咪風格的金句（繁體中文），讓人邊 debug 邊微笑。
-# 執行方式：直接在終端機輸入 `python main.py`
+# 執行方式：python main.py N（N 可選，一次要印幾句）
 
 import random
+import sys
 
 # 內建的 Mimi 風格金句清單
 mimi_quotes = [
@@ -18,8 +18,17 @@ mimi_quotes = [
     "輸一次不丟臉，一直不學才真的該被嘲笑。"
 ]
 
-# 隨機選一句金句
-selected_quote = random.choice(mimi_quotes)
+# 取得命令列參數 N，預設為 1
+try:
+    count = int(sys.argv[1]) if len(sys.argv) > 1 else 1
+    if count < 1:
+        count = 1
+except ValueError:
+    count = 1
 
-# 顯示結果
-print(f"\n🐾 米咪金句：{selected_quote}\n")
+selected_quotes = random.sample(mimi_quotes, min(count, len(mimi_quotes)))
+
+print("\n🐾 米咪金句：")
+for q in selected_quotes:
+    print(q)
+print("")
